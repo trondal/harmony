@@ -1,6 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { EnTurService } from './services/EnTurService';
 import { z } from 'zod';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 const envSchema = z.object({
   VITE_ENTUR_API: z.string(),

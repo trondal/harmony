@@ -15,7 +15,8 @@
     "i18next-browser-languagedetector": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^13.0.2"
+    "react-i18next": "^13.0.2",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

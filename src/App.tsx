@@ -1,14 +1,30 @@
 import { useTranslation } from 'react-i18next';
 import { EnTurService } from './services/EnTurService';
+import { z } from 'zod';
+
+const envSchema = z.object({
+  VITE_ENTUR_API: z.string(),
+  VITE_APP_NAME: z.string(),
+  VITE_STOP_NAME: z.string()
+});
+
+const result = envSchema.safeParse({
+  VITE_ENTUR_API: import.meta.env.VITE_ENTUR_API,
+  VITE_APP_NAME: import.meta.env.VITE_APP_NAME,
+  VITE_STOP_NAME: import.meta.env.VITE_STOP_PLACE
+});
 
 function App() {
-  const VITE_ENTUR_API: string = import.meta.env.VITE_ENTUR_API;
-  const VITE_APP_NAME: string = import.meta.env.VITE_APP_NAME;
   const { t } = useTranslation();
+
+  if (!result.success) {
+    return <pre>{JSON.stringify(result.error.issues, null, 2)}</pre>;
+  }
+
   const enturService = new EnTurService(
-    VITE_ENTUR_API,
-    VITE_APP_NAME,
-    'NSR:StopPlace:58189'
+    import.meta.env.VITE_ENTUR_API,
+    import.meta.env.VITE_APP_NAME,
+    import.meta.env.VITE_STOP_PLACE
   );
   void enturService.getRoutes();
 

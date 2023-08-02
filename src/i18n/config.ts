@@ -19,7 +19,7 @@ void i18n
     .init({
         //ignoreJSONStructure: false,
         fallbackLng: 'en',
-        debug: true, //process.env.NODE_ENV === 'development',
+        debug: import.meta.env.MODE === 'development',
         defaultNS: 'translation',
         keySeparator: '.',
         lng: 'nb',

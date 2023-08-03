@@ -27,7 +27,7 @@ export class EnTurService {
 
   private getQuery = () => {
     return `{
-            stopPlace(id:"NSR:StopPlace:58189") {
+            stopPlace(id:"${this.stopName}") {
               name
               id
               estimatedCalls(numberOfDepartures: 20) {

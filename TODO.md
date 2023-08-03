@@ -10,7 +10,7 @@
 - [ ] Do something with profile button?
 - [ ] Responsive logo button
 - [x] Set up tests
-- [ ] i18n relative/ago functionality
+- [x] i18n relative/ago functionality
 - [ ] Visible dev mode during dev (appbar-like above?)
 - [ ]
 - [ ]

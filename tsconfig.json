@@ -19,7 +19,8 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "typeRoots": ["./types"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

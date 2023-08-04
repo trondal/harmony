@@ -12,14 +12,15 @@ import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 //import AdbIcon from '@mui/icons-material/Adb';
 import { Link as RouterLink } from 'react-router-dom';
-import { AppRoutes } from './services/RouteService';
 import Link from '@mui/material/Link';
 import LanguageSelect from './components/LanguageSelect';
+import { useTranslation } from 'react-i18next';
 // import logo from './assets/harmony.png';
 
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
+  const { t } = useTranslation();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -93,13 +94,21 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' }
               }}
             >
-              {AppRoutes.map((route) => (
-                <MenuItem key={route.key} onClick={handleCloseNavMenu}>
-                  <Link component={RouterLink} to={route.path} key={route.key}>
-                    <Typography>{route.label}</Typography>
-                  </Link>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link component={RouterLink} to="transport">
+                  <Typography>{t('transport')}</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link component={RouterLink} to="lights">
+                  <Typography>{t('lights')}</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link component={RouterLink} to="heating">
+                  <Typography>{t('heating')}</Typography>
+                </Link>
+              </MenuItem>
             </Menu>
           </Box>
           <Typography
@@ -121,13 +130,21 @@ function ResponsiveAppBar() {
             Harmony
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {AppRoutes.map((route) => (
-              <Link component={RouterLink} to={route.path} key={route.key}>
-                <Typography sx={{ color: '#000000', marginLeft: 1 }}>
-                  {route.label}
-                </Typography>
-              </Link>
-            ))}
+            <Link component={RouterLink} to="transport">
+              <Typography sx={{ color: '#000000', marginLeft: 1 }}>
+                {t('transport')}
+              </Typography>
+            </Link>
+            <Link component={RouterLink} to="lights">
+              <Typography sx={{ color: '#000000', marginLeft: 1 }}>
+                {t('lights')}
+              </Typography>
+            </Link>
+            <Link component={RouterLink} to="heating">
+              <Typography sx={{ color: '#000000', marginLeft: 1 }}>
+                {t('heating')}
+              </Typography>
+            </Link>
           </Box>
 
           {/* <Box sx={{ flexGrow: 0 }}>

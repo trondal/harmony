@@ -24,6 +24,7 @@ void i18n
         debug: import.meta.env.MODE === 'development',
         defaultNS: 'translation',
         keySeparator: '.',
+        lng: 'en',
         fallbackLng: 'en',
         resources: {
             en: {

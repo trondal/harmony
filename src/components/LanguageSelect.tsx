@@ -6,8 +6,8 @@ import { LANGUAGES } from '../constants';
 function LanguageSelect() {
   const { i18n } = useTranslation();
 
-  const handleChange = async (event: SelectChangeEvent) => {
-    await i18n.changeLanguage(event.target.value).then();
+  const handleChange = (event: SelectChangeEvent) => {
+    void i18n.changeLanguage(event.target.value);
   };
 
   console.log(i18n.language);
@@ -19,6 +19,7 @@ function LanguageSelect() {
       id="demo-simple-select"
       value={i18n.language}
       label="Language"
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
       onChange={handleChange}
       variant="outlined"
     >

@@ -1,6 +1,9 @@
 {
   "english": "english",
   "key": "{{what}} is {{how}}",
+  "lights": "Lights",
+  "heating": "Heating",
+  "transport": "Transport",
   "date": {
     "P": "{{date, P}}",
     "PP": "{{date, PP}}",

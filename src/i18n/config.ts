@@ -9,6 +9,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import english from './locales/en/translation.json';
 import norwegian from './locales/nb/translation.json';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 const locales: { [index: string]: Locale } = { nb, en };
 
@@ -18,11 +19,12 @@ function isValidDate(arg: unknown): arg is Date {
 
 void i18n
     .use(initReactI18next)
+    .use(LanguageDetector)
     .init({
         debug: import.meta.env.MODE === 'development',
         defaultNS: 'translation',
         keySeparator: '.',
-        lng: 'en', //nb
+        fallbackLng: 'en',
         resources: {
             en: {
                 translation: english

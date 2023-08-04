@@ -10,6 +10,7 @@ import { ThemeProvider } from '@mui/material';
 import { theme } from './theme';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                 {route.label}
               </Route>
             ))}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </ThemeProvider>
       </Provider>

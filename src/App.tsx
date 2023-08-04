@@ -8,21 +8,25 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { AppRoutes } from './services/RouteService';
 import { ThemeProvider } from '@mui/material';
 import { theme } from './theme';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 function App() {
   return (
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <ResponsiveAppBar />
-        <Routes>
-          {AppRoutes.map((route) => (
-            <Route path={route.path} key={route.key} element={route.element}>
-              {route.label}
-            </Route>
-          ))}
-        </Routes>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <ResponsiveAppBar />
+          <Routes>
+            {AppRoutes.map((route) => (
+              <Route path={route.path} key={route.key} element={route.element}>
+                {route.label}
+              </Route>
+            ))}
+          </Routes>
+        </ThemeProvider>
+      </Provider>
     </BrowserRouter>
   );
 }

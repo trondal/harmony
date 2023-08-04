@@ -1,16 +1,26 @@
-// import { useTranslation } from 'react-i18next';
-import { EnTurService } from '../services/EnTurService';
-import Card from '@mui/material/Card';
+import { useGetAllQuery } from '../services/EnTurService';
+import DepartureItem from '../components/DepartureItem';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import Paper from '@mui/material/Paper';
+import TableContainer from '@mui/material/TableContainer';
 
 const Transport = () => {
-  const enturService = new EnTurService(
-    import.meta.env.VITE_ENTUR_API,
-    import.meta.env.VITE_APP_NAME,
-    import.meta.env.VITE_STOP_PLACE
+  const { data: stop, isLoading } = useGetAllQuery();
+  if (isLoading) return <div>Loading...</div>;
+
+  return (
+    <TableContainer component={Paper}>
+      <Table>
+        <TableBody>
+          {stop &&
+            stop.estimatedCalls.map((departure, index) => (
+              <DepartureItem key={index} data={departure} />
+            ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
-  void enturService.getRoutes();
-  // const { t } = useTranslation();
-  return <Card>Transport</Card>;
 };
 
 export default Transport;

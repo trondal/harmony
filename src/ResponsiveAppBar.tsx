@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link as RouterLink } from 'react-router-dom';
 import { AppRoutes } from './services/RouteService';
 import Link from '@mui/material/Link';
+import LanguageSelect from './components/LanguageSelect';
 // import logo from './assets/harmony.png';
 
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -158,6 +159,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box> */}
+          <LanguageSelect />
         </Toolbar>
       </Container>
     </AppBar>

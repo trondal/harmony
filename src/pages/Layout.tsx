@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
-import ResponsiveAppBar from '../ResponsiveAppBar';
+import ResponsiveAppBar from '../components/ResponsiveAppBar';
 import { Provider } from 'react-redux';
 import { store } from '../store';
 import { ThemeProvider } from '@mui/material';

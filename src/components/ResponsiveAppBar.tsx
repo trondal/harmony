@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 //import AdbIcon from '@mui/icons-material/Adb';
 import { Link as RouterLink } from 'react-router-dom';
 import Link from '@mui/material/Link';
-import LanguageSelect from './components/LanguageSelect';
+import LanguageSelect from './LanguageSelect';
 import { useTranslation } from 'react-i18next';
 // import logo from './assets/harmony.png';
 

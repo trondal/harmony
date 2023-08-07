@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import i18n from './config';
+import i18n from './i18n';
 import subDays from "date-fns/subDays";
 
 describe('i18n', () => {

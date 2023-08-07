@@ -19,7 +19,6 @@ function LanguageSelect() {
       id="demo-simple-select"
       value={i18n.language}
       label="Language"
-      // eslint-disable-next-line @typescript-eslint/no-misused-promises
       onChange={handleChange}
       variant="outlined"
     >

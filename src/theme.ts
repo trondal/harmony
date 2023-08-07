@@ -15,4 +15,15 @@ export const theme = createTheme({
             contrastText: '#000',
         },
     },
+    components: {
+        MuiTableRow: {
+            styleOverrides: {
+                root: {
+                    '&:last-child td': {
+                        borderBottom: 0,
+                    },
+                }
+            }
+        }
+    }
 });

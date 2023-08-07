@@ -4,22 +4,35 @@ import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query';
 import { ENV_VARIABLES } from '../env';
 import { PostResponse, StopPlace } from '../types/Entur';
 
+interface FromTo {
+  from: string;
+  to: string;
+}
+
 export const transportApi = createApi({
   baseQuery: graphqlRequestBaseQuery({ url: ENV_VARIABLES.VITE_ENTUR_API }),
   endpoints: (builder) => ({
-    getAll: builder.query<StopPlace, void>({
-      query: () => ({
+    getDeparturesFrom: builder.query<StopPlace, string>({
+      query: (stopPlace) => ({
         method: 'POST',
         Headers: {
           'ET-Client-Name': ENV_VARIABLES.VITE_APP_NAME,
         },
         document: gql`{
-          stopPlace(id:"NSR:StopPlace:58189") {
+          stopPlace(id:"${stopPlace}") {
             name
             id
             estimatedCalls(numberOfDepartures: 10) {
-              expectedDepartureTime
+              realtime
+              aimedArrivalTime
               aimedDepartureTime
+              expectedArrivalTime
+              expectedDepartureTime
+              actualArrivalTime
+              actualDepartureTime
+              date
+              forBoarding
+              forAlighting
               destinationDisplay {
                 frontText
               }
@@ -29,6 +42,49 @@ export const transportApi = createApi({
               }
               serviceJourney {
                 line {
+                  id
+                  publicCode
+                  transportMode
+                }
+              }
+            }
+          }
+        }
+        `
+      }),
+      transformResponse: (response: PostResponse) => response.stopPlace
+    }),
+    getDeparturesFromTo: builder.query<StopPlace, FromTo>({
+      query: (args) => ({
+        method: 'POST',
+        Headers: {
+          'ET-Client-Name': ENV_VARIABLES.VITE_APP_NAME,
+        },
+        document: gql`{
+          stopPlace(id:"${args.from}") {
+            name
+            id
+            estimatedCalls(numberOfDepartures: 10) {
+              realtime
+              aimedArrivalTime
+              aimedDepartureTime
+              expectedArrivalTime
+              expectedDepartureTime
+              actualArrivalTime
+              actualDepartureTime
+              date
+              forBoarding
+              forAlighting
+              destinationDisplay {
+                frontText
+              }
+              quay {
+                id
+                publicCode
+              }
+              serviceJourney {
+                line {
+                  id
                   publicCode
                   transportMode
                 }
@@ -43,5 +99,5 @@ export const transportApi = createApi({
   })
 })
 
-export const { useGetAllQuery } = transportApi
+export const { useGetDeparturesFromQuery, useGetDeparturesFromToQuery } = transportApi
 

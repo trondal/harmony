@@ -21,22 +21,21 @@ import { LanguageSelect } from './LanguageSelect';
 
 function ResponsiveAppBar() {
   const { t } = useTranslation();
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
+  const [anchorElementNav, setAnchorElementNav] =
+    React.useState<null | HTMLElement>(null);
   /*   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   ); */
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
+    setAnchorElementNav(event.currentTarget);
   };
   /*   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   }; */
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    setAnchorElementNav(null);
   };
 
   /*   const handleCloseUserMenu = () => {
@@ -78,7 +77,7 @@ function ResponsiveAppBar() {
             </IconButton>
             <Menu
               id="menu-appbar"
-              anchorEl={anchorElNav}
+              anchorEl={anchorElementNav}
               anchorOrigin={{
                 vertical: 'bottom',
                 horizontal: 'left'
@@ -88,7 +87,7 @@ function ResponsiveAppBar() {
                 vertical: 'top',
                 horizontal: 'left'
               }}
-              open={Boolean(anchorElNav)}
+              open={Boolean(anchorElementNav)}
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' }

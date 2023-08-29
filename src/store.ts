@@ -9,5 +9,6 @@ export const store = configureStore({
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
     middleware: (getDefaultMiddleware) =>
+        // eslint-disable-next-line unicorn/prefer-spread
         getDefaultMiddleware().concat(transportApi.middleware)
 });

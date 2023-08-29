@@ -6,11 +6,11 @@ import TableRow from '@mui/material/TableRow';
 import { t } from 'i18next';
 import { EstimatedDeparture } from '../types/Entur';
 
-interface Props {
+interface Properties {
   data: EstimatedDeparture;
 }
 
-function DepartureItem({ data }: Props) {
+function DepartureItem({ data }: Properties) {
   const info = data.serviceJourney.line;
 
   return (
@@ -32,4 +32,4 @@ function DepartureItem({ data }: Props) {
   );
 }
 
-export default DepartureItem;
+export { DepartureItem };

@@ -2,7 +2,7 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import { useGetDeparturesFromToQuery } from '../services/EnTurService';
-import DepartureItem from '../components/DepartureItem';
+import { DepartureItem } from '../components/DepartureItem';
 import { CARL_BERNER, JERNBANETORGET } from '../constants';
 
 function DeparturesFromTo() {
@@ -28,4 +28,4 @@ function DeparturesFromTo() {
   );
 }
 
-export default DeparturesFromTo;
+export { DeparturesFromTo };

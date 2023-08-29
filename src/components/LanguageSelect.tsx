@@ -30,4 +30,4 @@ function LanguageSelect() {
   );
 }
 
-export default LanguageSelect;
+export { LanguageSelect };

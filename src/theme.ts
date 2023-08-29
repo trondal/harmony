@@ -28,4 +28,4 @@ const theme = createTheme({
     }
 });
 
-export default theme;
+export { theme };

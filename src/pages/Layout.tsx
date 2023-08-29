@@ -2,9 +2,9 @@ import { Outlet } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material';
 import { Provider } from 'react-redux';
-import ResponsiveAppBar from '../components/ResponsiveAppBar';
+import { ResponsiveAppBar } from '../components/ResponsiveAppBar';
 import { store } from '../store';
-import theme from '../theme';
+import { theme } from '../theme';
 
 function Layout() {
   return (
@@ -18,4 +18,4 @@ function Layout() {
   );
 }
 
-export default Layout;
+export { Layout };

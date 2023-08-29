@@ -14,4 +14,4 @@ function Lights() {
   );
 }
 
-export default Lights;
+export { Lights };

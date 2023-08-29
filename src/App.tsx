@@ -8,11 +8,11 @@ import {
   createRoutesFromElements,
   RouterProvider
 } from 'react-router-dom';
-import Layout from './pages/Layout';
-import Lights from './pages/Lights';
-import Transport from './pages/Transport';
-import Heating from './pages/Heating';
-import HomePage from './pages/HomePage';
+import { Layout } from './pages/Layout';
+import { Lights } from './pages/Lights';
+import { Transport } from './pages/Transport';
+import { Heating } from './pages/Heating';
+import { HomePage } from './pages/HomePage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,4 +33,4 @@ function App() {
   return <RouterProvider router={router} />;
 }
 
-export default App;
+export { App };

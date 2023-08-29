@@ -6,4 +6,4 @@ function HomePage() {
   return <Card>HomePage {t('english')}</Card>;
 }
 
-export default HomePage;
+export { HomePage };

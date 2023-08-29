@@ -13,4 +13,4 @@ function Heating() {
   );
 }
 
-export default Heating;
+export { Heating };

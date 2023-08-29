@@ -2,10 +2,10 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import { useGetDeparturesFromQuery } from '../services/EnTurService';
-import DepartureItem from '../components/DepartureItem';
+import { DepartureItem } from '../components/DepartureItem';
 import { CARL_BERNER } from '../constants';
 
-function TransportFrom() {
+function DeparturesFrom() {
   const { data: stop, isLoading } = useGetDeparturesFromQuery(CARL_BERNER, {
     pollingInterval: 15000
   });
@@ -25,4 +25,4 @@ function TransportFrom() {
   );
 }
 
-export default TransportFrom;
+export { DeparturesFrom };

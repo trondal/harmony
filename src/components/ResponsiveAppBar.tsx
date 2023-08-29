@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link as RouterLink } from 'react-router-dom';
 import Link from '@mui/material/Link';
 import { useTranslation } from 'react-i18next';
-import LanguageSelect from './LanguageSelect';
+import { LanguageSelect } from './LanguageSelect';
 // import logo from './assets/harmony.png';
 
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -182,4 +182,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export { ResponsiveAppBar };

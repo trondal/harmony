@@ -1,17 +1,17 @@
 import { Typography } from '@mui/material';
-import { EstimatedDeparture } from '../types/Entur';
 import { BusIcon, MetroIcon, TramIcon } from '@entur/icons';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 
 import { t } from 'i18next';
+import { EstimatedDeparture } from '../types/Entur';
 
 interface Props {
   data: EstimatedDeparture;
 }
 
-function DepartureItem(props: Props) {
-  const info = props.data.serviceJourney.line;
+function DepartureItem({ data }: Props) {
+  const info = data.serviceJourney.line;
 
   return (
     <TableRow>
@@ -21,13 +21,13 @@ function DepartureItem(props: Props) {
         {info.transportMode === 'tram' && <TramIcon />}
         <Typography sx={{ ml: 1 }}>{info.publicCode}</Typography>
         <Typography sx={{ ml: 1 }}>
-          {props.data.destinationDisplay.frontText}
+          {data.destinationDisplay.frontText}
         </Typography>
       </TableCell>
       <TableCell>
-        {t('date.ago', { date: new Date(props.data.expectedDepartureTime) })}
+        {t('date.ago', { date: new Date(data.expectedDepartureTime) })}
       </TableCell>
-      <TableCell>{props.data.quay.publicCode}</TableCell>
+      <TableCell>{data.quay.publicCode}</TableCell>
     </TableRow>
   );
 }

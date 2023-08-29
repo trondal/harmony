@@ -10,7 +10,6 @@ function LanguageSelect() {
     void i18n.changeLanguage(event.target.value);
   };
 
-  console.log(i18n.language);
   // ^?
 
   return (

@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-const Lights = () => {
+function Lights() {
   const { t } = useTranslation();
   return (
     <Card>
@@ -12,6 +12,6 @@ const Lights = () => {
       <Link to="/bobbo">NotFound example</Link>
     </Card>
   );
-};
+}
 
 export default Lights;

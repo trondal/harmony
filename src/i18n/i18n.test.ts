@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
-import i18n from './i18n';
 import subDays from "date-fns/subDays";
+import i18n from './i18n';
 
 describe('i18n', () => {
     test('interpolation works', () => {

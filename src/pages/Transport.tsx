@@ -1,9 +1,9 @@
 import Grid from '@mui/material/Grid'; // Grid version 1
-import DeparturesFrom from './DeparturesFrom';
-import DeparturesFromTo from './DeparturesFromTo';
 import CardHeader from '@mui/material/CardHeader';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import DeparturesFromTo from './DeparturesFromTo';
+import DeparturesFrom from './DeparturesFrom';
 
 function Transport() {
   return (

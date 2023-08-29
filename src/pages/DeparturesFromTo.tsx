@@ -1,11 +1,11 @@
-import { useGetDeparturesFromToQuery } from '../services/EnTurService';
-import DepartureItem from '../components/DepartureItem';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
+import { useGetDeparturesFromToQuery } from '../services/EnTurService';
+import DepartureItem from '../components/DepartureItem';
 import { CARL_BERNER, JERNBANETORGET } from '../constants';
 
-const DeparturesFromTo = () => {
+function DeparturesFromTo() {
   const { data: stop, isLoading } = useGetDeparturesFromToQuery(
     { from: CARL_BERNER, to: JERNBANETORGET },
     {
@@ -26,6 +26,6 @@ const DeparturesFromTo = () => {
       </Table>
     </TableContainer>
   );
-};
+}
 
 export default DeparturesFromTo;

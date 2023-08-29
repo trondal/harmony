@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-const Heating = () => {
+function Heating() {
   const { t } = useTranslation();
   return (
     <Card>
@@ -11,6 +11,6 @@ const Heating = () => {
       <Link to="/lights">Lights</Link>
     </Card>
   );
-};
+}
 
 export default Heating;

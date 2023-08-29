@@ -7,9 +7,9 @@ import {
 import { enUS as en, nb } from 'date-fns/locale';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 import english from './locales/en/translation.json';
 import norwegian from './locales/nb/translation.json';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 const locales: { [index: string]: Locale } = { nb, en };
 

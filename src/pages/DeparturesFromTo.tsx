@@ -9,7 +9,7 @@ function DeparturesFromTo() {
   const { data: stop, isLoading } = useGetDeparturesFromToQuery(
     { from: CARL_BERNER, to: JERNBANETORGET },
     {
-      pollingInterval: 15000
+      pollingInterval: 15_000
     }
   );
   if (isLoading) return <div>Loading...</div>;
@@ -19,8 +19,8 @@ function DeparturesFromTo() {
       <Table>
         <TableBody>
           {stop &&
-            stop.estimatedCalls.map((departure, index) => (
-              <DepartureItem key={index} data={departure} />
+            stop.estimatedCalls.map((departure) => (
+              <DepartureItem key={crypto.randomUUID()} data={departure} />
             ))}
         </TableBody>
       </Table>

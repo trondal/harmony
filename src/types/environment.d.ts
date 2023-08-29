@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-interface ImportMetaEnv {
+interface ImportMetaEnvironment {
     readonly VITE_ENTUR_API: string
     readonly VITE_APP_NAME: string
     readonly VITE_STOP_PLACE: string;
@@ -8,6 +8,6 @@ interface ImportMetaEnv {
 }
 
 interface ImportMeta {
-    readonly env: ImportMetaEnv
+    readonly env: ImportMetaEnvironment
 }
 

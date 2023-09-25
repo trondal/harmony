@@ -5,5 +5,11 @@ module.exports = {
     project: ['./tsconfig.json', './tsconfig.node.json']
   },
   extends: ['@trondal/eslint-config-trondal/strict'],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite-env.d.ts', 'vite.config.ts']
+  ignorePatterns: [
+    'dist',
+    '.eslintrc.cjs',
+    'vite-env.d.ts',
+    'vite.config.ts',
+    'server.js'
+  ]
 };

@@ -8,11 +8,21 @@ import {
   createRoutesFromElements,
   RouterProvider
 } from 'react-router-dom';
+import { z } from 'zod';
 import { Layout } from './pages/Layout';
 import { Lights } from './pages/Lights';
 import { Transport } from './pages/Transport';
 import { Heating } from './pages/Heating';
 import { HomePage } from './pages/HomePage';
+
+const envVariables = z.object({
+  VITE_ENTUR_API: z.string(),
+  VITE_APP_NAME: z.string(),
+  VITE_STOP_PLACE: z.string(),
+  VITE_BACKEND_URL: z.string()
+});
+
+envVariables.parse(import.meta.env);
 
 const router = createBrowserRouter(
   createRoutesFromElements(

@@ -24,6 +24,14 @@ const theme = createTheme({
                     },
                 }
             }
+        },
+        MuiAppBar: {
+            styleOverrides: {
+                root: {
+                    height: '15vh',
+                    minHeight: '15vh'
+                }
+            }
         }
     }
 });

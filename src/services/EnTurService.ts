@@ -1,7 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { gql } from 'graphql-request';
 import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query';
-import { ENV_VARIABLES } from '../environment';
 import { PostResponse, StopPlace } from '../types/Entur';
 
 interface FromTo {
@@ -10,13 +9,13 @@ interface FromTo {
 }
 
 export const transportApi = createApi({
-  baseQuery: graphqlRequestBaseQuery({ url: ENV_VARIABLES.VITE_ENTUR_API }),
+  baseQuery: graphqlRequestBaseQuery({ url: import.meta.env.VITE_ENTUR_API }),
   endpoints: (builder) => ({
     getDeparturesFrom: builder.query<StopPlace, string>({
       query: (stopPlace) => ({
         method: 'POST',
         Headers: {
-          'ET-Client-Name': ENV_VARIABLES.VITE_APP_NAME,
+          'ET-Client-Name': import.meta.env.VITE_APP_NAME,
         },
         document: gql`
           {
@@ -59,7 +58,7 @@ export const transportApi = createApi({
       query: (arguments_) => ({
         method: 'POST',
         Headers: {
-          'ET-Client-Name': ENV_VARIABLES.VITE_APP_NAME,
+          'ET-Client-Name': import.meta.env.VITE_APP_NAME,
         },
         document: gql`
           {

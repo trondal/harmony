@@ -1,32 +1,30 @@
-import MenuItem from '@mui/material/MenuItem';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useTranslation } from 'react-i18next';
-import { LANGUAGES } from '../constants';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import ToggleButton from '@mui/material/ToggleButton';
+import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
+import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
 
 function LanguageSelect() {
   const { i18n } = useTranslation();
 
-  const handleChange = (event: SelectChangeEvent) => {
-    void i18n.changeLanguage(event.target.value);
+  const handleChange = (
+    _event: React.MouseEvent<HTMLElement>,
+    newAlignment: string
+  ) => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    i18n.changeLanguage(newAlignment);
   };
 
   // ^?
-
   return (
-    <Select
-      labelId="demo-simple-select-label"
-      id="demo-simple-select"
-      value={i18n.language}
-      label="Language"
-      onChange={handleChange}
-      variant="outlined"
-    >
-      {LANGUAGES.map(({ code, label }) => (
-        <MenuItem value={code} key={code}>
-          {label}
-        </MenuItem>
-      ))}
-    </Select>
+    <ToggleButtonGroup exclusive onChange={handleChange}>
+      <ToggleButton value="en" aria-label="left aligned">
+        <FormatAlignLeftIcon />
+      </ToggleButton>
+      <ToggleButton value="nb" aria-label="centered">
+        <FormatAlignCenterIcon />
+      </ToggleButton>
+    </ToggleButtonGroup>
   );
 }
 

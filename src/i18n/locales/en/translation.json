@@ -3,6 +3,10 @@
   "key": "{{what}} is {{how}}",
   "lights": "Lights",
   "heating": "Heating",
+  "temperature": "Temperature",
+  "living_room": "Living room",
+  "bed_room": "Bed room",
+  "apartment": "Apartment",
   "transport": "Transport",
   "date": {
     "P": "{{date, P}}",

@@ -2,6 +2,7 @@
   "english": "engelsk1",
   "lights": "Lys",
   "heating": "Varme",
+  "temperature": "Temperatur",
   "transport": "Transport",
   "date": {
     "P": "{{date, P}}",

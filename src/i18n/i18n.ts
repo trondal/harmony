@@ -18,7 +18,7 @@ function isValidDate(v: unknown): v is Date {
 }
 
 export const options: InitOptions = {
-    debug: import.meta.env.MODE === 'development',
+    debug: false, // import.meta.env.MODE === 'development',
     defaultNS: 'translation',
     keySeparator: '.',
     lng: 'en',
@@ -62,4 +62,4 @@ i18next
     .use(initReactI18next)
     .use(LanguageDetector)
     // eslint-disable-next-line unicorn/prefer-top-level-await
-    .init(options).then(() => console.info('Successfully loaded')).catch(() => console.error('Translation error'));
+    .init(options).then().catch(() => console.error('Translation error'));

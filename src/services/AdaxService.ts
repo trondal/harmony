@@ -62,7 +62,7 @@ export interface Foo {
     password: string;
 }
 
-const baseUrl = import.meta.env.VITE_BACKEND_URL as string;
+const baseUrl = import.meta.env.VITE_BACKEND_URL;
 
 export const adaxApi = createApi({
     reducerPath: 'adaxApi',

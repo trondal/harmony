@@ -1,1 +1,4 @@
-const CLIENT_ID = "";
+function DanaLockService() {
+    console.error('foo')
+}
+export { DanaLockService }
